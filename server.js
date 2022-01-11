@@ -1,3 +1,5 @@
+// Created a variable to enable the port 
+const PORT = process.env.PORT || 3001; 
 // Created a route that front-end can collect data from 
 const { animals } = require('./data/animals')
 const express = require('express')
@@ -61,6 +63,6 @@ app.get('/api/animals', (req, res) => {
 });
 
 // This was added to "listen" to the server 
-app.listen(3001, () => {
-    console.log('API server now on port 3001');
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
