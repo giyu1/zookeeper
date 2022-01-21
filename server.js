@@ -49,6 +49,10 @@ function filterByQuery(query, animalsArray) {
     return filteredResults;
 }
 
+function findById(id, animalsArray) {
+    const result = animalsArray.filter(animal => animal.id === id)[0];
+    return result;
+}
 
 // This is used to "add the route"
 app.get('/api/animals', (req, res) => {
@@ -61,10 +65,17 @@ app.get('/api/animals', (req, res) => {
     res.json(animals);
 });
 
+// This is another "route" that I created
+// it is used in getting specific ID's of animals 
+app.get('api/animals/:id', (req, res) => {
+    const result = findById(req.params.id, animals);
+    res.json(result);
+});
+
 
 // This was added to "chain" 
 // I took out the hardcoded PORT valueo of 3001 
 // Chained the PORT variable I created on top of the page 
 app.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}`);
+    console.log(`API server now on port ${PORT}!`);
 });

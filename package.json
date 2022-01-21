@@ -1,4 +1,4 @@
-  {
+{
   "name": "zookeeper",
   "version": "1.0.0",
   "description": "",
@@ -12,10 +12,13 @@
     "url": "git+https://github.com/giyu1/zookeeper.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sameer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/giyu1/zookeeper/issues"
   },
-  "homepage": "https://github.com/giyu1/zookeeper#readme"
+  "homepage": "https://github.com/giyu1/zookeeper#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
