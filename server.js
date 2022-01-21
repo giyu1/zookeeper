@@ -2,6 +2,7 @@
 // The following line instatiates the server 
 // These two lines of code basically set-up the server 
 const express = require('express');
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // This was used to create a "route" that the front-end can request data from 
@@ -62,6 +63,8 @@ app.get('/api/animals', (req, res) => {
 
 
 // This was added to "chain" 
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+// I took out the hardcoded PORT valueo of 3001 
+// Chained the PORT variable I created on top of the page 
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}`);
 });
