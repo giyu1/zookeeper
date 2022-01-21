@@ -76,7 +76,7 @@ app.get('/api/animals/:id', (req, res) => {
     // Here the code was updated
     // if/else statement was added
     // displays either a object from the json
-    // else a 404 error appears 
+    // else a 404 error appears     
     if (result) {
     res.json(result);
     } else {
