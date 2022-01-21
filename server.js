@@ -49,6 +49,9 @@ function filterByQuery(query, animalsArray) {
     return filteredResults;
 }
 
+// This function is being used to tell how to find the animal ID 
+// The const states that the results will filter for the animal ID
+// It will also go through a loop? 
 function findById(id, animalsArray) {
     const result = animalsArray.filter(animal => animal.id === id)[0];
     return result;
@@ -56,7 +59,8 @@ function findById(id, animalsArray) {
 
 // This is used to "add the route"
 app.get('/api/animals', (req, res) => {
-    // Alright, here, I am 'Calling the function' that I created earlier, and I am doing so with the first arguement 'query' 
+    // Alright, here, I am 'Calling the function' that I created earlier, 
+    // and I am doing so with the first arguement 'query' 
     // The variable 'results' will give me the animal
     let results = animals;
     if (req.query) {
@@ -67,9 +71,17 @@ app.get('/api/animals', (req, res) => {
 
 // This is another "route" that I created
 // it is used in getting specific ID's of animals 
-app.get('api/animals/:id', (req, res) => {
+app.get('/api/animals/:id', (req, res) => {
     const result = findById(req.params.id, animals);
+    // Here the code was updated
+    // if/else statement was added
+    // displays either a object from the json
+    // else a 404 error appears 
+    if (result) {
     res.json(result);
+    } else {
+        res.send(404);
+    }
 });
 
 
