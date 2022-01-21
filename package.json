@@ -1,4 +1,4 @@
-{
+  {
   "name": "zookeeper",
   "version": "1.0.0",
   "description": "",
@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/giyu1/zookeeper/issues"
   },
-  "homepage": "https://github.com/giyu1/zookeeper#readme",
-  "dependencies": {
-    "express": "^4.17.2"
-  }
+  "homepage": "https://github.com/giyu1/zookeeper#readme"
 }
